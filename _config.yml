@@ -17,8 +17,8 @@ social:
 
 sass:
   sass_dir: _sass
-  # style: compressed
+  style: compressed
 
 # Google-analytics
 google-analytics:
-  id: ""
+  id: "UA-75017126-2"

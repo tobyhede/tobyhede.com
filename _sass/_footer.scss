@@ -40,5 +40,20 @@ footer {
       }
     }
   }
-}
 
+  @media only screen and (max-width: $cut-small) {
+    ul {
+      li {
+        border-left: 0;
+        margin: 1rem 0 0 0;
+        padding-left: 0;
+        display: block;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+}

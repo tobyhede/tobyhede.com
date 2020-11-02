@@ -20,6 +20,24 @@
   }
 }
 
+#headshot {
+  height: 110px;
+  width: 110px;
+  float: right;
+  padding:5px;
+  margin: 25px 5px 10px 5px;
+  background:#FFFFFF;
+  border: 1px #EEEEEE solid;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+  #headshot {
+    margin-top: -75px;
+  }
+}
+
 
 // .intro {
 //   margin: 1em auto 2em auto ;

@@ -7,13 +7,11 @@ url: https://tobyhede.com
 email: toby@tobyhede.com
 social:
   - label: twitter
-    url: https://twitter.com/tobyhede
+    url: https://hachyderm.io/@tobyhede
   - label: linkedin
     url: https://au.linkedin.com/in/tobyhede
   - label: github
     url: https://github.com/tobyhede
-  - label: reddit
-    url: https://www.reddit.com/r/ServerlessPatterns/
 
 sass:
   sass_dir: _sass

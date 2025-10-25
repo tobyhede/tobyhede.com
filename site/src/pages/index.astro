@@ -24,19 +24,19 @@ const posts = (await getCollection('blog'))
     .archive-item {
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid rgb(var(--gray-light));
+      border-bottom: 1px solid var(--border-color);
     }
     .archive-item:last-child {
       border-bottom: none;
     }
     .archive-item a {
       text-decoration: none;
-      color: rgb(var(--black));
+      color: var(--heading-color);
       display: block;
       transition: color 0.2s ease;
     }
     .archive-item a:hover {
-      color: rgb(var(--accent));
+      color: var(--accent);
     }
     .archive-title {
       margin: 0 0 0.5rem 0;
@@ -50,7 +50,7 @@ const posts = (await getCollection('blog'))
     }
     .archive-description {
       margin: 0.5rem 0 0 0;
-      color: rgb(var(--gray-dark));
+      color: var(--text-color);
       font-size: 0.9rem;
       line-height: 1.4;
     }

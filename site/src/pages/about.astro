@@ -1,21 +1,21 @@
 ---
 import AboutHeroImage from '../assets/pondering-hero.png';
-import Layout from '../layouts/BlogPost.astro';
+import HeroPageLayout from '../layouts/HeroPageLayout.astro';
 ---
 
-<Layout
-	title="Hello, I'm Toby!"
-	description="Hello, I'm Toby!"
-	pubDate={new Date('August 23 2025')}
-	heroImage={AboutHeroImage}
+<HeroPageLayout
+  title="Hello, I'm Toby!"
+  description="Hello, I'm Toby!"
+  pubDate={new Date('August 23 2025')}
+  heroImage={AboutHeroImage}
 >
-	<p>Items of interest, in no particular order:</p>
-	<ul>
-		<li>vp engineering@<a href="https://cipherstash.com">cipherstash.com</a>.</li>
-		<li>rust engineer.</li>
-		<li>software architect.</li>
-		<li>enthusiastic drummer and sporadic musician.</li>
-		<li>lifts heavy things and puts them down again.</li>
-		<li>often hilarious (citation needed).</li>
-	</ul>
-</Layout>
+  <p>Items of interest, in no particular order:</p>
+  <ul>
+    <li>vp engineering@<a href="https://cipherstash.com">cipherstash.com</a>.</li>
+    <li>rust engineer.</li>
+    <li>software architect.</li>
+    <li>enthusiastic drummer and sporadic musician.</li>
+    <li>lifts heavy things and puts them down again.</li>
+    <li>often hilarious (citation needed).</li>
+  </ul>
+</HeroPageLayout>

@@ -2,17 +2,17 @@
 // Theme toggle component for switching between light and dark modes
 ---
 
-<button id="theme-toggle" aria-label="Toggle dark mode">
-  <svg id="theme-toggle-light-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+<button class="theme-toggle" aria-label="Toggle dark mode">
+  <svg class="theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
     <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
   </svg>
-  <svg id="theme-toggle-dark-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" style="display: none;">
+  <svg class="theme-icon-dark" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" style="display: none;">
     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
   </svg>
 </button>
 
 <style>
-  #theme-toggle {
+  .theme-toggle {
     background: none;
     border: none;
     cursor: pointer;
@@ -24,21 +24,18 @@
     transition: color 0.2s ease;
   }
 
-  #theme-toggle:hover {
+  .theme-toggle:hover {
     color: var(--accent);
   }
 
-  #theme-toggle svg {
+  .theme-toggle svg {
     width: 24px;
     height: 24px;
   }
 </style>
 
 <script>
-  // This script runs on every page load
-  const themeToggle = document.getElementById('theme-toggle');
-  const lightIcon = document.getElementById('theme-toggle-light-icon');
-  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  // This script runs on every page load and handles ALL theme toggles
   const html = document.documentElement;
 
   // Get saved theme from localStorage or default to dark
@@ -56,33 +53,41 @@
     }
   }
 
-  // Update UI based on current theme
-  function updateThemeUI(theme: string) {
+  // Update all theme toggle icons
+  function updateAllIcons(theme: string) {
+    const lightIcons = document.querySelectorAll('.theme-icon-light');
+    const darkIcons = document.querySelectorAll('.theme-icon-dark');
+
+    if (theme === 'dark') {
+      lightIcons.forEach((icon) => (icon as HTMLElement).style.display = 'none');
+      darkIcons.forEach((icon) => (icon as HTMLElement).style.display = 'block');
+    } else {
+      lightIcons.forEach((icon) => (icon as HTMLElement).style.display = 'block');
+      darkIcons.forEach((icon) => (icon as HTMLElement).style.display = 'none');
+    }
+  }
+
+  // Update theme
+  function updateTheme(theme: string) {
     if (theme === 'dark') {
       html.classList.add('dark');
-      if (lightIcon && darkIcon) {
-        lightIcon.style.display = 'none';
-        darkIcon.style.display = 'block';
-      }
     } else {
       html.classList.remove('dark');
-      if (lightIcon && darkIcon) {
-        lightIcon.style.display = 'block';
-        darkIcon.style.display = 'none';
-      }
     }
+    updateAllIcons(theme);
   }
 
   // Initialize theme on page load
   const currentTheme = getTheme();
-  updateThemeUI(currentTheme);
+  updateTheme(currentTheme);
 
-  // Toggle theme when button is clicked
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  // Add click handlers to ALL theme toggle buttons
+  const toggleButtons = document.querySelectorAll('.theme-toggle');
+  toggleButtons.forEach((button) => {
+    button.addEventListener('click', () => {
       const newTheme = html.classList.contains('dark') ? 'light' : 'dark';
       setTheme(newTheme);
-      updateThemeUI(newTheme);
+      updateTheme(newTheme);
     });
-  }
+  });
 </script>

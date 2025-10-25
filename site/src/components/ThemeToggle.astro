@@ -41,12 +41,12 @@
   const darkIcon = document.getElementById('theme-toggle-dark-icon');
   const html = document.documentElement;
 
-  // Get saved theme from localStorage or default to light
+  // Get saved theme from localStorage or default to dark
   function getTheme() {
     if (typeof localStorage !== 'undefined') {
-      return localStorage.getItem('theme') || 'light';
+      return localStorage.getItem('theme') || 'dark';
     }
-    return 'light';
+    return 'dark';
   }
 
   // Save theme to localStorage

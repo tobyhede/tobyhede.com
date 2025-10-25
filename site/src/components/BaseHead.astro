@@ -25,7 +25,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 <!-- Theme initialization (prevent FOUC) -->
 <script is:inline>
 	// Apply theme immediately before page renders
-	const theme = localStorage.getItem('theme') || 'light';
+	const theme = localStorage.getItem('theme') || 'dark';
 	if (theme === 'dark') {
 		document.documentElement.classList.add('dark');
 	}

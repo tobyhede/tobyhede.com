@@ -28,8 +28,8 @@
 :root.dark {
 	/* Dark mode colors - not pure black, not pure white */
 	--bg-color: #1a1d28;
-	--text-color: #e4e6eb;
-	--heading-color: #f0f2f5;
+	--text-color: #b8bcc5;
+	--heading-color: #d4d7df;
 	--border-color: #3a3f4b;
 	--code-bg: #2d3139;
 	--gray-gradient: rgba(40, 44, 52, 50%), #1a1d28;

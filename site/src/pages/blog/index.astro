@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import HeroPageLayout from '../../layouts/HeroPageLayout.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import HeroImage from '../../assets/pondering-hero.png';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -12,6 +13,7 @@ const posts = (await getCollection('blog')).sort(
 <HeroPageLayout
   title={`Archive - ${SITE_TITLE}`}
   description={SITE_DESCRIPTION}
+  heroImage={HeroImage}
 >
   <style>
     .archive-list {

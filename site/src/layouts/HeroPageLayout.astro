@@ -11,10 +11,11 @@ interface Props {
   description: string;
   pubDate?: Date;
   heroImage?: ImageMetadata;
+  heroImageDark?: ImageMetadata;
   updatedDate?: Date;
 }
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageDark } = Astro.props;
 ---
 
 <html lang="en">
@@ -28,6 +29,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
       }
       .hero-image {
         width: 100%;
+        position: relative;
       }
       .hero-image img {
         display: block;
@@ -67,7 +69,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <main>
       <article>
         <div class="hero-image">
-          {heroImage && <Image width={720} height={360} src={heroImage} alt="" />}
+          {heroImage && <Image class="hero-image-light" width={720} height={360} src={heroImage} alt="" />}
+          {heroImageDark && <Image class="hero-image-dark" width={720} height={360} src={heroImageDark} alt="" />}
         </div>
         <div class="prose">
           <div class="title">

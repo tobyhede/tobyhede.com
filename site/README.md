@@ -14,6 +14,7 @@ Features:
 - ✅ Sitemap support
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
+- ✅ Dark mode with theme toggle (dark mode is default)
 
 ## 🚀 Project Structure
 
@@ -39,6 +40,17 @@ There's nothing special about `src/components/`, but that's where we like to put
 The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
 
 Any static assets, like images, can be placed in the `public/` directory.
+
+## 🎨 Theme and Dark Mode
+
+This site includes a custom dark mode implementation:
+
+- **Default**: Dark mode is enabled by default for all visitors
+- **Theme Toggle**: Click the sun/moon icon in the footer to switch themes
+- **Persistence**: Your theme preference is saved in browser localStorage
+- **FOUC Prevention**: Theme loads before page render to prevent flash of unstyled content
+
+The theme system uses CSS variables defined in `src/styles/global.css`. Colors automatically adjust when switching between light and dark modes.
 
 ## 🧞 Commands
 

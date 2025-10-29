@@ -38,12 +38,12 @@
   // This script runs on every page load and handles ALL theme toggles
   const html = document.documentElement;
 
-  // Get saved theme from localStorage or default to dark
+  // Get saved theme from localStorage or default to light
   function getTheme() {
     if (typeof localStorage !== 'undefined') {
-      return localStorage.getItem('theme') || 'dark';
+      return localStorage.getItem('theme') || 'light';
     }
-    return 'dark';
+    return 'light';
   }
 
   // Save theme to localStorage

@@ -27,16 +27,16 @@
 
 :root.dark {
 	/* Dark mode colors - not pure black, not pure white */
-	--bg-color: #1a1d28;
-	--text-color: #b8bcc5;
+	--bg-color: #0a1428;
+	--text-color: #8a9bb0;
 	--heading-color: #d4d7df;
 	--border-color: #3a3f4b;
 	--code-bg: #2d3139;
-	--gray-gradient: rgba(40, 44, 52, 50%), #1a1d28;
+	--gray-gradient: rgba(40, 44, 52, 50%), #0a1428;
 	--box-shadow:
 		0 2px 6px rgba(0, 0, 0, 25%), 0 8px 24px rgba(0, 0, 0, 33%), 0 16px 32px
 		rgba(0, 0, 0, 33%);
-	--header-bg: #1a1d28;
+	--header-bg: #0a1428;
 	--accent: #5b8fff;
 }
 @font-face {
@@ -87,8 +87,20 @@ h6 {
 h1 {
 	font-size: 3.052em;
 }
+html.dark h1 {
+	color: #0099ff;
+	text-shadow:
+		0 0 10px rgba(0, 153, 255, 0.9),
+		0 0 20px rgba(0, 153, 255, 0.7),
+		0 0 30px rgba(0, 153, 255, 0.5),
+		0 0 40px rgba(0, 120, 200, 0.4),
+		0 0 60px rgba(0, 120, 200, 0.2);
+}
 h2 {
 	font-size: 2.441em;
+}
+html.dark h2 {
+	color: #8a9bb0;
 }
 h3 {
 	font-size: 1.953em;
@@ -177,4 +189,18 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Theme-aware hero images */
+.hero-image-light {
+	display: block !important;
+}
+.hero-image-dark {
+	display: none !important;
+}
+html.dark .hero-image-light {
+	display: none !important;
+}
+html.dark .hero-image-dark {
+	display: block !important;
 }

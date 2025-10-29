@@ -34,7 +34,25 @@ This is an Astro-based blog website for tobyhede.com, built using the Astro blog
   - `rss.xml.js` - RSS feed generation
 - **Layouts**: `src/layouts/BlogPost.astro` - Blog post template
 - **Components**: Reusable Astro components in `src/components/`
+  - `ThemeToggle.astro` - Dark mode toggle (can be used multiple times per page)
+  - `Footer.astro` - Site footer with theme toggle and social links
+  - `BaseHead.astro` - Head metadata with FOUC prevention
 - **Global Config**: Site title and description in `src/consts.ts`
+
+### Theming and Dark Mode
+- **Theme Toggle Component**: `src/components/ThemeToggle.astro` - Reusable component with sun/moon icons
+- **Default Theme**: Dark mode (set via localStorage, defaults to 'dark' for new visitors)
+- **Theme Persistence**: User preference saved to localStorage
+- **CSS Variables**: Defined in `src/styles/global.css` with separate `:root` and `:root.dark` sections
+- **FOUC Prevention**: Inline script in `BaseHead.astro` applies theme before page renders
+- **Multiple Instances**: ThemeToggle uses classes (not IDs) to support multiple toggles per page
+
+**Theme Implementation Details:**
+- Theme state managed via `.dark` class on `<html>` element
+- All colors use CSS variables (e.g., `--bg-color`, `--text-color`, `--heading-color`)
+- Dark mode colors designed for reduced eye strain (not pure black/white)
+- Theme toggle appears in footer next to social icons
+- Transitions applied for smooth theme switching
 
 ### Key Features
 - TypeScript with strict mode enabled
@@ -42,7 +60,8 @@ This is an Astro-based blog website for tobyhede.com, built using the Astro blog
 - RSS feed auto-generation
 - Sitemap integration
 - Responsive image handling with Astro's Image component
-- Global CSS variables for theming
+- Dark mode with theme toggle (dark mode is default)
+- CSS variable-based theming system with localStorage persistence
 
 ### Development Notes
 - The site uses Astro 5.x with modern ESM modules

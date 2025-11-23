@@ -1,7 +1,7 @@
 ---
 title: 'Working with Claude Code in hard mode'
 description: 'Using Claude Code to create a Rust Bevy 0.17 space simulation using full orbital mechanics and real physics.'
-pubDate: 'Nov 20 2025'
+pubDate: 'Nov 23 2025'
 ---
 
 After a long time working deep in the computering mines I recently decided to drag myself kicking and screaming into the Century of the Fruitbat, and learn how to machine whisper with AI.

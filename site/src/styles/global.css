@@ -64,7 +64,7 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--text-color);
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.7;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -125,7 +125,11 @@ p {
 	margin-bottom: 1em;
 }
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
+}
+ul,
+ol {
+	margin-bottom: 0.5em;
 }
 textarea {
 	width: 100%;
@@ -158,7 +162,7 @@ blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0px;
-	font-size: 1.333em;
+	font-size: 1.1em;
 }
 hr {
 	border: none;
@@ -166,7 +170,7 @@ hr {
 }
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 16px;
 	}
 	main {
 		padding: 1em;

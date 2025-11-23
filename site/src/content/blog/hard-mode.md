@@ -73,11 +73,9 @@ Hard mode means: **the model is (nearly) always wrong**
 
 I don’t know any physics.
 I don’t know anything about game development.
-
 (Note: I do know Rust, and have been Rusting in production for a couple of years).
 
 Zero domain knowledge means:
-
 - I have no prior knowledge of any physics concepts
 - I have no understanding of any of the math(s) involved
 - I have no intuition for the orbital calculations
@@ -86,7 +84,6 @@ Zero domain knowledge means:
 
 I can’t help the machine.
 I have zero implicit knowledge that I can rely on to shape context.
-
 I have no intuition that the output is good, or yet another delivery of HallucinatedHotMess™.
 
 Hard mode means: **the model is (nearly) always wrong, but I don't know if it is wrong**
@@ -97,7 +94,6 @@ Hard mode means: **the model is (nearly) always wrong, but I don't know if it is
 I am trying to answer the question: What even is AI-assisted engineering in this, the Century of the Fruitbat, CE 2025?
 
 Hard mode is an experiment. A lab.
-
   1. Pick a hard, unstable stack (Bevy 0.17 + orbital mechanics)
   2. Enforce rigorous RealWorld™ quality standards
   3. Use the machine for AI-assisted collaboration and engineering
@@ -107,6 +103,5 @@ I have spent a long career working deep in the computering mines, shovelling cod
 It is time to embrace the machine-powered TurboShovel™.
 
 Maybe it works. Maybe it doesn’t.
-
 Either way, I want more than “vibes”.
 

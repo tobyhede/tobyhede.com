@@ -108,5 +108,5 @@ It is time to embrace the machine-powered TurboShovel™.
 
 Maybe it works. Maybe it doesn’t.
 
-Either way, I want a clearer answer than “vibes”.
+Either way, I want more than “vibes”.
 

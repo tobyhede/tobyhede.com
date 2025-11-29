@@ -1,11 +1,10 @@
 ---
-
-title: 'Machine Assisted Development stack: December 2025 edition'
+title: 'Machine Assisted Development stack'
 description: 'The complicated contraption of models and markdown that I have woven into something resembling a Machine Assisted Development environment.'
-pubDate: 'Nov 28 2025'
+pubDate: 'Nov 29 2025'
 ----------------------
 
-## Machine Assisted Development stack (December 2025)
+## December 2025 edition
 
 Current setup:
 
@@ -25,9 +24,9 @@ All the other components (Cipherpowers, Claudish, Codex, Turboshovel) plug into 
 
 ---
 
-## Cipherpowers (commands, agents, skills, principles, and standards)
+## Cipherpowers
 
-**[Cipherpowers](https://github.com/cipherstash/cipherpowers)** is a plugin for Claude Code that provides the foundation context.
+**[Cipherpowers](https://github.com/cipherstash/cipherpowers)** is a plugin for Claude Code that provides the foundation context through commands, agents, skills, principles, and standards.
 
 The core components are:
 * **Commands** – starting prompts for a workflow or process (`/cipherpowers:code-review`)
@@ -44,7 +43,7 @@ Using subagents is esential for effectively managing context. The Main Agent can
 
 ---
 
-## Claudish + OpenRouter (more models, more problems)
+## Claudish + OpenRouter
 
 **Claudish** is a recent addition, and enables the same workflow to run on different models via **[OpenRouter](**.
 
@@ -60,14 +59,14 @@ Using additional models for review will nearly always reveal issues that the pri
 
 ---
 
-## Codex (code review)
+## Codex
 
 **Codex** is the OpenAI version of Claude Code, used primarily for code review.
 I will need to crunch the numbers, but it may be replaced by Claudish.
 
 ---
 
-## TurboShovel (gates & hooks)
+## TurboShovel
 
 **[TurboShovel](https://github.com/tobyhede/turboshovel)** is another Claude Code plugin.
 
@@ -94,5 +93,16 @@ The rough loop:
    - with specialised agents (`rust-agent`)
    - TurboShovel gates enforce checks
    - code review after each batch
+
+---
+
+## What actually matters
+
+The specific tools will change. The useful bits are:
+
+- **Curated context** – commands, agents, and skills instead of one-shot prompts
+- **Explicit workflows** - automatic gates for enforcement, and context injection for encouragement and reducing context load
+- **Multiple models** – a second (or third) model whose job is to disagree
+
 
 

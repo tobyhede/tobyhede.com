@@ -1,6 +1,6 @@
 ---
-title: 'Machine Assisted Development stack'
-description: 'The complicated contraption of models and markdown that I have woven into something resembling a Machine Assisted Development environment.'
+title: 'Machine-Assisted Development stack'
+description: 'The complicated incantantion of models and markdown that I have woven into a Machine-Assisted Development environment.'
 pubDate: 'Nov 29 2025'
 ---
 

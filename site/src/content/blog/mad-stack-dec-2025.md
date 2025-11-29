@@ -1,6 +1,6 @@
 ---
 title: 'Machine-Assisted Development stack'
-description: 'The complicated incantantion of models and markdown that I have woven into a Machine-Assisted Development environment.'
+description: 'The complicated incantation of models and markdown that I have woven into a Machine-Assisted Development environment.'
 pubDate: 'Nov 29 2025'
 ---
 
@@ -26,7 +26,7 @@ All the other components (Cipherpowers, Claudish, Codex, Turboshovel) plug into 
 
 ## Cipherpowers
 
-**[Cipherpowers](https://github.com/cipherstash/cipherpowers)** is a plugin for Claude Code that provides the foundation context through commands, agents, skills, principles, and standards.
+**[Cipherpowers](https://github.com/cipherstash/cipherpowers)** is a plugin for Claude Code that provides the foundation context through commands, agents, skills, principles, and standards. Many of the skills have been lifted from the very excellent [Superpowers](https://github.com/obra/superpowers). I very highly recommend starting with Superpowers as a general suite of skills.
 
 The core components are:
 * **Commands** – starting prompts for a workflow or process (`/cipherpowers:code-review`)

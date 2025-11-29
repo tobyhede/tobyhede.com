@@ -2,7 +2,7 @@
 title: 'Machine Assisted Development stack'
 description: 'The complicated contraption of models and markdown that I have woven into something resembling a Machine Assisted Development environment.'
 pubDate: 'Nov 29 2025'
-----------------------
+---
 
 ## December 2025 edition
 
@@ -44,7 +44,7 @@ Using subagents is esential for effectively managing context. The Main Agent can
 
 ## Claudish + OpenRouter
 
-**Claudish** is a recent addition, and enables the same workflow to run on different models via **[OpenRouter](**.
+**Claudish** is a recent addition, and enables the same workflow to run on different models via **[OpenRouter](https://openrouter.ai/)**.
 
 Using other models to review and verify the output of the primary Claude Code models has **dramatically** improved the quality.
 

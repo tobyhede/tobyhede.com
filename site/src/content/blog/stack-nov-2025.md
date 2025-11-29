@@ -14,6 +14,7 @@ Current setup:
 * **Codex** – plan & code review
 * **Turboshovel** – workflow enforcement via gates and hooks
 
+---
 
 ## Claude Code (CLI)
 

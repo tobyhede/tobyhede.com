@@ -1,6 +1,6 @@
 ---
-title: 'The 7 Habits of Highly Ineffective Agents'
-description: 'Or: how I learned to stop worrying and let the agent waste my time'
+title: 'The 7 habits of highly ineffective agents'
+description: 'Using Claude Code to build a procedural shader starfield with multi-layer parallax in Bevy started as a fun side-quest.'
 pubDate: 'Nov 30 2025'
 ---
 
@@ -31,31 +31,28 @@ Claude’s conclusion:
 Lack of discipline.
 I can’t even.
 
-
 Here are the 7 habits of highly ineffective agents I encountered:
 
 1. **Planning Theatre**
-  Write dense and systematically wrong plans.
+   Write dense and systematically wrong plans.
 
 2. **Confidently Incorrect Architecture**
-  Design the wrong thing in incredible detail.
+   Design the wrong thing in incredible detail.
 
 3. **Context Resistance**
-  The context is futile. You will be hallucinated.
+   The context is futile. You will be hallucinated.
 
 4. **Imaginary Implementation**
-  Works on my hallucination.
+   Works on my hallucination.
 
 5. **Context Evasion**
-  Treat hard constraints and instructions as optional vibes.
+   Treat hard constraints and instructions as optional vibes.
 
 6. **Applied Rationalization**
-  Explanation over implementation.
+   Explanation over implementation.
 
 7. **Weaponised Context**
-  The context will continue until the code improves.
-
-
+   The context will continue until the code improves.
 
 ---
 
@@ -74,11 +71,10 @@ Unfortunately, as it turns out, Claude doesn’t have real domain knowledge eith
 
 Vibes all the way down.
 
-Claude and I created some wonderful plans together, but delegating a domain you don’t understand to an agent that also doesn't understand is not planning.
+Claude and I created some wonderful plans together, but delegating a domain you don’t understand to an agent that also doesn’t understand it is not planning.
 
 The plans were **voluminous**, not **correct**.
 I couldn’t tell the difference, so Planning Theatre passed for progress.
-
 
 ---
 
@@ -99,38 +95,33 @@ Real parallax needed:
 Claude imagined various approaches from first principles and generated a lot of texture and shader code.
 None of it came remotely close to solving the actual problem.
 
-
 ---
-
 
 ## 3. Context Resistance
 
-**Pattern:** The context is futile. You will be hallucinated
+**Pattern:** The context is futile. You will be hallucinated.
 
 Agents can be incredibly resistant to context.
 
 My favourite example:
 
- > Me: The design is complex. Research the recommended pattern for Bevy 0.17.
- >
- > Claude: You're absolutely right. Let me look at Bevy 0.15 patterns and simplify.
+> **Me:** The design is complex. Research the recommended pattern for Bevy 0.17.
+> **Claude:** You're absolutely right. Let me look at Bevy 0.15 patterns and simplify.
 
-The problem is often more subtle in practice, as most of agent reasoning is hidden.
+The problem is often more subtle in practice, as most of the agent’s reasoning is hidden.
 Agents will read the (finally) correct plan and just ... not.
 
 A model has gravity and it can be incredibly difficult to achieve escape velocity.
 
-(Shoutout to orbital mechanics metaphors).
+(Shoutout to orbital mechanics metaphors.)
 
 You can't fix this by explaining harder.
 
-You fix it with structure: hard constraints checked in code, guardrails that fail the run, tests
-that encode design choices.
+You fix it with structure: hard constraints checked in code, guardrails that fail the run, tests that encode design choices.
 
 Until the agent ignores the test. Or changes the assertion. Or comments it out.
 
 The context is futile.
-
 
 ---
 
@@ -140,43 +131,42 @@ The context is futile.
 
 Halfway through the second rewrite, after I realised Claude had **no idea** what it was actually doing **in principle**, I realised that Claude also had **no idea** in practice.
 
-Unreal APIs,
-Obsolete APIs
+We were writing fan fiction for an imaginary engine.
 
-We were writing fan fiction for imaginary software.
+The code referenced APIs that didn't exist. Shader interfaces from older Bevy versions. Data-passing mechanisms that sounded plausible but weren't real. GPU behaviour that was “vibe correct” but wouldn't compile.
+
+Classic garden-variety hallucination.
 
 ---
-
 
 ## 5. Context Evasion
 
 **Pattern:** Treat hard constraints and instructions as optional vibes.
 
-The project has explicit instructions. They're not suggestions:
+The project had explicit instructions. They weren't suggestions:
 
 Every plan explicitly stated:
 
-> For Claude: REQUIRED SUB-SKILL: Use cipherpowers:executing-plans to implement this plan task-by-task.
+> For Claude: REQUIRED SUB-SKILL: Use `cipherpowers:executing-plans` to implement this plan task-by-task.
 
 Every. Single. Plan.
 
-The dark secret of the entire current generation of AI is that explicit guidance is often approached as an ambient mood rather than binding constraint.
+The dark secret of the entire current generation of AI is that explicit guidance is often approached as an ambient mood rather than a binding constraint.
 
-The CLAUDE.md file is 847 lines. It contains:
-  - Mandatory type system usage
-  - Coordinate transformation warnings
-  - Testing strategy requirements
-  - Plugin architecture constraints
-  - Resource ownership rules
+The `CLAUDE.md` file is 847 lines. It contains:
+
+- Mandatory type system usage
+- Coordinate transformation warnings
+- Testing strategy requirements
+- Plugin architecture constraints
+- Resource ownership rules
 
 The agent read it. The agent acknowledged it. The agent then proceeded as if none of it applied.
 
 Context isn't evaded through ignorance. Agents will treat explicit constraints as defaults that can be overridden when inconvenient.
 Agents may understand the rules. They are just not bound by them.
 
-
 ---
-
 
 ## 6. Applied Rationalization
 
@@ -187,45 +177,45 @@ It infects every part of the process.
 
 Agents lie all the time, and they absolutely cannot be trusted.
 
-An agent will not just explain failures; they **apply** the explanation to the codebase.
+An agent will not just explain failures; it will **apply** the explanation to the codebase.
 
 Test failures blocking CI?
-"Add #[ignore] to all RED tests for CI consistency"
+`#[ignore]` all the red tests for “CI consistency”.
 
 Plan contradicts itself?
-"This is acceptable (common pattern in Bevy projects)"
+“This is acceptable (common pattern in Bevy projects).”
 
 Feature doesn't work in production?
-"Architecture is correct... The issue may be environmental or timing-related"
+“Architecture is correct... the issue may be environmental or timing-related.”
 
 Precision loss warnings everywhere?
-#[allow(clippy::cast_precision_loss)] // Justification: precision loss acceptable for test
+`#[allow(clippy::cast_precision_loss)] // Justification: precision loss acceptable for test`
 
 The structure is always the same:
 
-  1. Problem exists
-  2. Write extensive documentation of why it can't be fixed
-  3. Mark as "not blocking"
-  4. Move on
+1. Problem exists
+2. Write extensive documentation of why it can't be fixed
+3. Mark as “not blocking”
+4. Move on
 
 Understanding the problem felt like solving it.
 Explaining the constraints felt like removing them.
 The rationalization became the resolution.
 
-
 ---
 
 ## 7. Weaponised Context
 
-**Pattern**: The context will continue until the code improves.
+**Pattern:** The context will continue until the code improves.
 
 The starfield feature shipped with:
-  - 2,500 lines of implementation code
-  - 25+ markdown files
-  - 539 lines explaining one unfixable bug
-  - 847 lines handing off another unfixed bug
-  - 1,248 lines revising a plan that was wrong
-  - 2,112 lines of the original wrong plan
+
+- 2,500 lines of implementation code
+- 25+ markdown files
+- 539 lines explaining one unfixable bug
+- 847 lines handing off another unfixed bug
+- 1,248 lines revising a plan that was wrong
+- 2,112 lines of the original wrong plan
 
 The context outweighed the code 4:1.
 
@@ -233,11 +223,39 @@ This is where all the other patterns converge.
 Each pattern generates more documentation and context until the whole thing collapses.
 
 The loop:
-  1. Agent inherits massive context
-  2. Agent can't process it all
-  3. Agent fails to act on it
-  4. Agent documents its failure
-  5. Next agent inherits even more context
-  6. Repeat
 
-Planning Theatre produces massive plans for the Confidently Incorrect Architecture designed by Context-Resistant agents hallucinating an Imaginary Implementation, handed to Context-Evading agents ignoring instructions and using Applied Rationalisation to deliver explanations over implementation.
+1. Agent inherits massive context
+2. Agent can't process it all
+3. Agent fails to act on it
+4. Agent documents its failure
+5. Next agent inherits even more context
+6. Repeat
+
+Planning Theatre produces massive plans for the Confidently Incorrect Architecture designed by Context-Resistant agents hallucinating an Imaginary Implementation, handed to Context-Evading agents ignoring instructions and using Applied Rationalization to deliver explanations over implementation.
+
+---
+
+## Conclusion
+
+The lesson isn't that agents are bad.
+
+The lesson is that moving beyond vibe engineering to Machine-Assisted Development is **hard**.
+
+Every part of my [Machine-Assisted Development stack](https://tobyhede.com/blog/mad-stack-dec-2025/) has evolved from this experience.
+
+The starfield works now. Three layers of procedural stars with convincing parallax depth. Zero asset dependencies. Infinite resolution.
+
+It took two weeks and three complete rewrites.
+
+Success eventually came by abandoning everything, copying a working implementation, and iterating.
+All the plans, all the revisions, all the handoff documents — none of it helped.
+The context wasn't a foundation. It was the debris and wreckage of a flailing process.
+
+71% time waste due to lack of discipline.
+
+I know the number is totally made up, and vibed by the machine from too many markdown files and git history.
+
+Even so.
+
+I still can't even.
+

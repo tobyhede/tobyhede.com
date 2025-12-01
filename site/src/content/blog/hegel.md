@@ -1,6 +1,6 @@
 ---
 title: 'Thesis-Antithesis-Synthesis'
-description: 'The Hegelian dialectic could frame it nicely.'
+description: 'The Hegelian Dialectic will continue until quality improves'
 pubDate: 'Dec 01 2025'
 ---
 

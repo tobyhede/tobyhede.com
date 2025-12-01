@@ -29,7 +29,8 @@ Claude’s conclusion:
 > **Time waste: ~71% due to lack of discipline**
 
 Lack of discipline.
-I can’t even.
+I can't even.
+
 
 Here are the 7 habits of highly ineffective agents I encountered:
 
@@ -244,6 +245,18 @@ The lesson is that moving beyond vibe engineering to Machine-Assisted Developmen
 Every part of my [Machine-Assisted Development stack](https://tobyhede.com/blog/mad-stack-dec-2025/) has evolved from this experience.
 
 The starfield works now. Three layers of procedural stars with convincing parallax depth. Zero asset dependencies. Infinite resolution.
+If you really pay attention you can see that the white dots move very slightly.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/GTcobvaczEc"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 It took two weeks and three complete rewrites.
 
